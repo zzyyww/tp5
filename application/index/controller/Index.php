@@ -1,7 +1,11 @@
 <?php
+
 namespace app\index\controller;
 
-class Index
+use app\action\Param;
+use app\common\output\Json;
+
+class Index extends Base
 {
     public function index()
     {
@@ -11,5 +15,19 @@ class Index
     public function hello($name = 'ThinkPHP5')
     {
         return 'hello,' . $name;
+    }
+
+    public function test()
+    {
+        $rule = [
+            ['id', 'int', 'int', null, null],
+        ];
+        $param = (new Param())->getRequestParam($rule);
+        return Json::success($param);
+    }
+
+    public function zyw()
+    {
+        return Json::success(['success']);
     }
 }
