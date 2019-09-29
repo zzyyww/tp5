@@ -9,6 +9,7 @@
 namespace app\common\exception;
 
 
+use app\common\output\Json;
 use Exception;
 use think\exception\Handle;
 
